@@ -1,0 +1,356 @@
+body
+{
+	background: #eee;
+	font-family: "Helvetica Neue", "Helvetica";
+}
+#container
+{
+	width: 960px;
+	margin: 20px auto;
+	background: white;
+	box-shadow: 0 0 1px #333;
+}
+header a
+{
+	color: white;
+}
+header
+{
+	font-size: 40px;
+	padding: 10px 20px;
+
+	font-family: 'Muli', sans-serif;
+
+	border-bottom: 1px solid #ccc;
+
+	background: #444;
+}
+#extensionContainer
+{
+	height: 650px;
+}
+#extensions
+{
+	width: 300px;
+	float: left;
+	height: 100%;
+	border-right: 1px solid #ccc;
+}
+#extensions ul
+{
+	max-height: 90%;
+	overflow: scroll;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0;
+}
+#extensions ul li
+{
+	padding: 4px 8px;
+}
+#extensions ul .active li
+{
+	background: rgb(255, 255, 228);
+}
+#extensions ul .disabled a
+{
+	color: gray;
+}
+#extensions ul li:hover
+{
+	background: #eef;
+}
+
+input,textarea
+{
+	padding: 8px;
+
+	width: 100%;
+	border: 1px solid #CCC;
+
+	outline: none;
+
+	-moz-transition: box-shadow 0.2s;
+	-webkit-transition: box-shadow 0.2s;
+	-o-transition: box-shadow 0.2s;
+	transition: box-shadow 0.2s;
+}
+input:focus,textarea:focus
+{
+	box-shadow: 0 0 2px rgb(40, 140, 255);
+}
+
+
+
+
+#about
+{
+	height: 400px;
+	text-align: center;
+}
+#about a
+{
+	font-size: 20px;
+	margin: 20px 80px;
+	padding: 40px 0;
+
+	display: block;
+
+	color: white;
+	border-radius: 5px;
+}
+#about i.fa
+{
+	font-size: 80px;
+}
+#about a.addButton
+{
+	background: rgb(40, 140, 255);
+}
+#about a.addButton:hover
+{
+	background: rgb(50, 150, 255);
+}
+#about a.addButton:active
+{
+	background: rgb(20, 120, 255);
+}
+#about a.storeButton
+{
+	background: rgb(40, 255, 100);
+}
+#about a.storeButton:hover
+{
+	background: rgb(60, 255, 120);
+}
+#about a.storeButton:active
+{
+	background: rgb(20, 255, 80);
+}
+#about a.importButton
+{
+	background: #ff9624;
+}
+#about a.importButton:hover
+{
+	background: #ffa634;
+}
+#about a.importButton:active
+{
+	background: #ef7604;
+}
+
+
+
+#primaryView
+{
+	float: right;
+	width: 659px;
+	height: 100%;
+	overflow: scroll;
+}
+#primaryView.hasExtension #editor
+{
+	display: block;
+}#primaryView.hasExtension #about
+{
+	display: none;
+}
+#primaryView #editor
+{
+	display: none;
+}
+#primaryView form
+{
+	padding: 20px;
+}
+#primaryView table
+{
+	width: 100%;
+}
+#primaryView form tr td:nth-child(odd)
+{
+	text-align: right;
+	padding-right: 20px;
+}
+#primaryView .menubar
+{
+	padding: 12px 21px;
+}
+.menubar
+{
+	background: #f7f7f7;
+	color: #333;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-left: none; border-right: none;
+	border-top: none;
+
+	color: #555;
+}
+.menubar .activation
+{
+	float: right;
+}
+.menubarAccent
+{
+	color: black;
+}
+a
+{
+	text-decoration: none;
+	color: rgb(40, 140, 255);
+}
+a.button
+{
+	padding: 8px 20px;
+	border: 1px solid #eee;
+	line-height: 36px;
+	border-radius: 3px;
+	background: #f7f7f7;
+
+/*	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;*/
+}
+a.button#activateButton
+{
+	color: rgb(65, 208, 67);;
+}
+a.button#deactivateButton
+{
+	color: rgb(232, 64, 67);
+}
+a.button:hover
+{
+	background: #f7f7ff;
+}
+.menubar a.button
+{
+	color: #444;
+	background: white;
+	margin: 2px;
+	padding: 4px 16px;
+	border: 1px solid #CCC;
+}
+.activation a.button
+{
+	display: none;
+}
+.menubar a.button:hover
+{
+	background: rgb(65, 208, 67);
+	color: white !important;
+	border: 1px solid rgb(25, 168, 27);
+}
+.menubar a.button.disabled:hover
+{
+	background: rgb(232, 64, 67);
+	color: white;
+	border: 1px solid rgb(192, 24, 27);
+}
+a.greenButton
+{
+	color: white;
+	background: rgb(65, 208, 67);
+	border: 1px solid rgb(25, 168, 27);
+}
+a.greenButton:hover
+{
+	color: white;
+	background: rgb(70, 213, 72);
+}
+a.greenButton:active
+{
+	color: white;
+	background: rgb(50, 193, 52);
+}
+.orangeButton
+{
+	color: white;
+	background: #ff8e00;
+	border: 1px solid #ff8e00;
+	border-radius: .5em;
+}
+a.red
+{
+	color: rgb(232, 64, 67);
+}
+a.redButton
+{
+	color: white;
+	background: rgb(232, 64, 67);
+	border: 1px solid rgb(192, 24, 27);
+}
+a.redButton:hover
+{
+	color: white;
+	background: rgb(237, 69, 72);
+}
+a.redButton:active
+{
+	color: white;
+	background: rgb(217, 49, 52);
+}
+.bluebutton
+{
+	color: white;
+	border-radius: 5px;
+	background: rgb(40, 140, 255);
+}
+.editJS, .editHTML, .editCSS
+{
+	display: none;
+
+	border: 1px solid #eee;
+	padding: 8px;
+	margin: 6px 0;
+}
+
+h2
+{
+	font-size: 18px;
+	margin: 8px 0;
+	margin-left: 4px;
+
+	line-height: 11px;
+}
+.notes
+{
+	color: #999;
+}
+.noty_text
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+#importOptions
+{
+	cursor: default;
+	position: absolute;
+	width: 100%;
+	display: none;
+	top: 0px;
+	height: 100%;
+	background: rgba(255, 255, 255, .5);
+
+	margin: 0 80px;
+	width: 500px;
+}
+#importOptions textarea
+{
+	width: 100%;
+}
+#importOptions form
+{
+	top: 9px;
+	position: relative;
+	color: black;
+	font-size: 22px;
+}
+
+#importOptions i.fa
+{
+	font-size: 26px !important;
+}

@@ -1,0 +1,163 @@
+<html>
+<title>QuickExtend</title>
+<head>
+	<script src="jquery-2.1.0.min.js" type="text/javascript"></script>
+	<script src="main.js" type="text/javascript"></script>
+	<script src="jwerty.js" type="text/javascript"></script>
+	<script type="text/javascript" src="noty/packaged/jquery.noty.packaged.min.js"></script>
+	<script src="settings.js" type="text/javascript"></script>
+	<link href="settings.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/FileSaver.js" type="text/javascript" charset="utf-8"></script>
+	<link href='http://fonts.googleapis.com/css?family=Muli:400,300italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div id="container">
+		<header> <a href="settings.html">QuickExtend</a> </header>
+
+		<div id="extensionContainer">
+			<div id="extensions">
+				<div class="menubar">
+					<a href="#" onclick="SettingsView.addExtension(); return false;"><i class="fa fa-plus"></i> New Extension</a>
+				</div>
+				<div id="extensionTemplate" style="display: none">
+					<a href="#" class="extension"><li data-id="0">Extension A</li></a>
+				</div>
+				<ul id="extensionsList">
+				</ul>
+			</div>
+			<div id="primaryView">
+
+				<div id="about">
+
+					<a href="#" onclick="SettingsView.addExtension(); return false;" class="storeButton"><i class="fa fa-cloud"></i><br>Extension Store</a>
+
+					<a href="#" onclick="SettingsView.addExtension(); return false;" class="addButton"><i class="fa fa-plus"></i><br>New Extension</a>
+
+					<div style="position: relative;">
+						<div id="importOptions">
+
+							<form onsubmit="SettingsView.import(); return false;">
+
+								<i class="fa fa-globe"></i> Import
+
+								<br> <br>
+
+								<input type="text" id="import" placeholder="Paste a URL or file contents of extension export">
+								<input class="button orangeButton" type="submit" value="Import">
+							</form>
+						</div>
+						<a href="#" onclick="$('#importOptions').fadeIn(); $('#import').focus(); return false;" class="importButton">
+
+							<i class="fa fa-globe"></i>
+							<br>
+
+							Import
+						</a>
+					</div>
+
+
+				</div>
+
+				<div id="editor">
+
+					<div class="menubar">
+						<div class="activation">
+							<a href="#" onclick="SettingsView.export()"><i class="fa fa-download"></i> Download</a>
+							<a href="#" onclick="SettingsView.enable()" class="button enabled" id="activateButton"><i class="fa fa-power-off"></i> Enable</a>
+							<a href="#" onclick="SettingsView.disable()" class="button disabled" id="deactivateButton"><i class="fa fa-power-off"></i> Disable</a>
+						</div>
+						<h2>
+							Edit Extension
+						</h2>
+					</div>
+
+
+					<form id="settings">
+						<input type="hidden" name="id" value="0">
+						<table>
+							<tr>
+								<td style="width: 30%">Extension Name</td>
+								<td><input type="text" name="name"></td>
+							</tr>
+							<tr>
+								<td>Author</td>
+								<td><input type="text" name="author"></td>
+							</tr>
+							<tr>
+								<td>Description</td>
+								<td><textarea name="description" rows="6"></textarea></td>
+							</tr>
+							<tr>
+								<td>
+									URLs
+									<br>
+									One per line
+								</td>
+								<td>
+									<textarea rows="4" name="urls"></textarea>
+
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="text-align: center">
+									<a class="button" href="#" onclick="$('.editJS').slideToggle()">Toggle Javascript</a>
+									<a class="button" href="#" onclick="$('.editCSS').slideToggle()">Toggle CSS</a>
+									<a class="button" href="#" onclick="$('.editHTML').slideToggle()">Toggle HTML</a>
+								</td>
+							</tr>
+						</table>
+
+						<div class="editJS">
+							<a href="#" onclick="addJSInclude()" style="float: right"> Add Script</a>
+							<h2>Javascript</h2>
+							<div class="notes">
+								The following javascript will be executed on page load.  jQuery will be loaded automatically
+							</div>
+							<div id="jsIncludeTemplate" style="display: none">
+								<input type="text" name="includes[js][]" placeholder="Enter a script's URL" >
+							</div>
+							<div id="jsIncludes"></div>
+							<textarea id="jsEditor" name="js" rows="15"></textarea>
+						</div>
+
+						<div class="editCSS">
+							<a href="#" onclick="addCSSInclude()" style="float: right"> Add Stylesheet</a>
+							<h2>CSS</h2>
+							<div class="notes">
+								The following CSS will be loaded on page load
+							</div>
+							<div id="cssIncludeTemplate" style="display: none">
+								<input type="text" name="includes[css][]" placeholder="Enter a stylesheet's URL" >
+							</div>
+							<div id="cssIncludes"></div>
+							<textarea id="cssEditor" name="css" rows="15"></textarea>
+						</div>
+
+						<div class="editHTML">
+							<h2>HTML</h2>
+							<div class="notes">
+								The following HTML will be hidden and added to the body on page load
+							</div>
+							<textarea id="htmlEditor" name="html" rows="15"></textarea>
+						</div>
+
+						<br>
+
+						<div style="text-align:center">
+
+							<a href="#" onclick="SettingsView.save()" class="button greenbutton"><i class="fa fa-check"></i> Save</a>
+							<a href="#" class="button redbutton" onclick="return SettingsView.delete()"><i class="fa fa-trash-o"></i> Delete</a>
+						</div>
+					</form>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+	</div>
+	<div style="clear: both"></div>
+
+</body>
+</html>
